@@ -73,3 +73,12 @@ func (v *HLS) OnReloadGlobal(scope int, cc, pc *core.Config) (err error){
 func (v *HLS) OnReloadVhost(vhost string, scope int,cc,pc *core.Config) (err error){
 	return
 }
+
+// when a connection accepted ,we create an agent to serve it
+type HLSConnectionAgent struct{
+	conn		*protocol.HLSConnection
+	wc			core.WorkerContainer
+	upstream	core.Agent
+	jitter		*Jitter
+	nbDropped	uint32
+}

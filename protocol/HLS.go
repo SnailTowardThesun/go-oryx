@@ -20,3 +20,23 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package protocol
+
+import (
+	"errors"
+	"github.com/ossrs/go-oryx/core"
+)
+
+// error when create HLS stream.
+var createHLSStreamError error = errors.New("HLS create stream error")
+
+// HLS protocol stack
+type HLSConnection struct{
+	// the current using stream id
+	sid			uint32
+	// m3u8 files path
+	m3u8_path	string
+
+	// to receive the quit message from server
+	wc core.WorkerContainer
+
+}
