@@ -1,13 +1,31 @@
 {
-  "listen": 1935,
-  "log": {
-    "tank": "file",
-    "level": "trace",
-    "file": "oryx.log"
+  "RTMP_SERVER":{
+	  "isEnable":"true"
+	  "listen": 1935,
+	  "log": {
+		"tank": "file",
+		"level": "trace",
+		"file": "oryx.log"
+	  },
+	  "vhosts": [
+		{
+		  "name": "__defaultVhost__"
+		}
+	  ]
   },
-  "vhosts": [
-    {
-      "name": "__defaultVhost__"
-    }
-  ]
+
+  "HLS_SERVER":{
+	  "isEnable":"false"
+	  "listen":8080,
+	  "log":{
+		  "tank": "file",
+		  "level": "trace",
+		  "file": "oryx_hls.log"
+	  },
+	  "vhost":[
+		  {
+			"name": "__defaultVhost__"
+		  }
+	  ]
+  }
 }
