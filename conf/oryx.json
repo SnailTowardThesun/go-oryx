@@ -1,6 +1,6 @@
 {
   "RTMP_SERVER":{
-	  "isEnable":"true"
+	  "isEnable":"true",
 	  "listen": 1935,
 	  "log": {
 		"tank": "file",
@@ -15,7 +15,7 @@
   },
 
   "HLS_SERVER":{
-	  "isEnable":"false"
+	  "isEnable":"false",
 	  "listen":8080,
 	  "log":{
 		  "tank": "file",
